@@ -15,7 +15,7 @@ import { Hamburguesa } from '../hamburguesa/hamburguesa';
 export class HamburguesaPersonalizada {
   @PrimaryGeneratedColumn({ type: 'integer', name: 'cod_hamburguesa_pers' })
   public codHaburguesaPerso: number;
-  @Column({ type: 'double', name: 'precio_base', nullable: false })
+  @Column({ type: 'double precision', name: 'precio_base', nullable: false })
   public precioBase: number;
   @Column({ type: 'double precision', name: 'precio_final' })
   public precioHamburguesa: number;
