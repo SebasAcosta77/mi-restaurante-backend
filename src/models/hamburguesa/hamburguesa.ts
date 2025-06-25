@@ -10,7 +10,7 @@ export class Hamburguesa {
   public nombreHamburguesa: string;
   @Column({ type: 'varchar', length: 250, name: 'descripcion_hamburguesa' })
   public descripcionHamburguesa: string;
-  @Column({ type: 'double', name: 'precio_hamburguesa' })
+  @Column({ type: 'double precision', name: 'precio_hamburguesa' })
   public precioHamburguesa: number;
 
   @OneToMany(() => HamburguesaPersonalizada, (burguerPer) => burguerPer.persoBirguer)
