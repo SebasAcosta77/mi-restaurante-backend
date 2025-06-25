@@ -18,7 +18,7 @@ export class Pedido {
 
   @Column({
     name: 'fecha_pedido',
-    type: 'datetime',
+    type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP',
   })
   fechaPedido: Date;
