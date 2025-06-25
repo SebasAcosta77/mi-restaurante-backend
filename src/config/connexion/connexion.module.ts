@@ -1,4 +1,3 @@
-
 import { Global, Module } from '@nestjs/common';
 import { Acceso } from 'models/acceso/acceso';
 import { Acompañamiento } from 'models/acompañamiento/acompañamiento';
@@ -17,42 +16,54 @@ import { Usuario } from 'models/usuario/usuario';
 import { DataSource } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
-
-
 @Global()
 @Module({
-    imports:[],
-    providers:[
+  providers: [
+    {
+      provide: DataSource,
+      useFactory: async () => {
+        try {
+          const poolConexion = new DataSource({
+            type: 'postgres',
+            host: process.env.DB_HOST,
+            port: Number(process.env.DB_PORT),
+            username: process.env.DB_USERNAME,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_NAME,
+            synchronize: true,
+            logging: true,
+            namingStrategy: new SnakeNamingStrategy(),
+            ssl: {
+              rejectUnauthorized: false,
+            },
+            entities: [
+              Acompañamiento,
+              Acceso,
+              Rol,
+              Usuario,
+              Imagen,
+              Adicion,
+              Bebida,
+              DetallePedido,
+              Hamburguesa,
+              HamburguesaAdicion,
+              HamburguesaPersonalizada,
+              HamburguesaSalsa,
+              Pedido,
+              Salsa,
+            ],
+          });
 
-        {provide: DataSource,
-            inject:[],
-            useFactory:async ()=>{
-                try{
-                    const poolConexion = new DataSource({
-                     type:"postgres",
-                     host:String(process.env.DB_HOST),
-                     port:Number(process.env.DB_PORT),
-                     username:String(process.env.DB_USERNAME),
-                     password:String(process.env.DB_PASSWORD),
-                     database:String(process.env.DB_NAME),
-                     synchronize:true, //sincronza la bd
-                     logging:true,//muestra o oculta la bd
-                     namingStrategy: new SnakeNamingStrategy(),
-                     ssl: {
-                         rejectUnauthorized: false, 
-                         },   
-                     entities:[Acompañamiento, Acceso, Rol, Usuario, Imagen, Adicion, Bebida, DetallePedido, Hamburguesa, HamburguesaAdicion, HamburguesaPersonalizada, HamburguesaSalsa, Pedido, Salsa],
-                    });
-                    await poolConexion.initialize();
-                    console.log("conexion establecida con: "+ String(process.env.DB_NAME));
-                    return poolConexion;
-                }catch(miErrorsito){
-                    console.log("fallo al realizar la conexion con la bd");
-                    throw miErrorsito;
-                }
-            }
+          await poolConexion.initialize();
+          console.log('✅ Conexión establecida con: ' + process.env.DB_NAME);
+          return poolConexion;
+        } catch (err) {
+          console.error(' Fallo al realizar la conexión con la BD');
+          throw err;
         }
-    ],
-    exports:[DataSource],
+      },
+    },
+  ],
+  exports: [DataSource],
 })
 export class ConnexionModule {}
