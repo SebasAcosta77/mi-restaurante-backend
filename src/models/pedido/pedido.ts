@@ -26,7 +26,7 @@ export class Pedido {
   @Column({ name: 'estado_pedido', type: 'varchar', length: 50 })
   estadoPedido: string;
 
-  @Column({ name: 'precio_total', type: 'double' })
+  @Column({ name: 'precio_total', type: 'double precision' })
   precioTotal: number;
 
   @Column({ type: 'integer', name: 'cod_usuario', nullable: false })
