@@ -16,7 +16,7 @@ export class Adicion {
   public nombreAdicion: string;
   @Column({ type: 'varchar', length: 250, name: 'descripcion_adicion' })
   public descripcionAdicion: string;
-  @Column({ type: 'double', name: 'precio_adicion' })
+  @Column({ type: 'double precision', name: 'precio_adicion' })
   public precioAdicion: number;
 
   @OneToMany(
