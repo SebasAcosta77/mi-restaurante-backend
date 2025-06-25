@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Bebida } from 'src/models/bebida/bebida';
+import { Bebida } from 'models/bebida/bebida';
+
 import { DataSource, Repository } from 'typeorm';
 
 @Injectable()

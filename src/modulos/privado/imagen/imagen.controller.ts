@@ -10,8 +10,9 @@ import {
   Put,
 } from '@nestjs/common';
 import { ImagenService } from './imagen.service';
-import { Imagen } from 'src/models/imagen/imagen';
+
 import { v4 as uuidv4 } from 'uuid';
+import { Imagen } from 'models/imagen/imagen';
 
 @Controller('imagen')
 export class ImagenController {

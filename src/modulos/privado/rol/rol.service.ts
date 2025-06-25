@@ -1,6 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { promises } from 'dns';
-import { Rol } from 'src/models/rol/rol';
+import { Rol } from 'models/rol/rol';
+
 import { DataSource, Repository } from 'typeorm';
 
 @Injectable()

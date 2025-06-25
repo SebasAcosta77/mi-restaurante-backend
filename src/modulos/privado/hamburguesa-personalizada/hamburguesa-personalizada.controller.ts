@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
 import { HamburguesaPersonalizadaService } from './hamburguesa-personalizada.service';
-import { HamburguesaPersonalizada } from 'src/models/hamburguesa-personalizada/hamburguesa-personalizada';
+import { HamburguesaPersonalizada } from 'models/hamburguesa-personalizada/hamburguesa-personalizada';
+
 
 @Controller('hamburguesa-personalizada')
 export class HamburguesaPersonalizadaController {

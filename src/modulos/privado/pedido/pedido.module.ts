@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { PedidoService } from './pedido.service';
 import { PedidoController } from './pedido.controller';
-import { SendGridModule } from 'src/common/Services/sendgrid.module';
+import { SendGridModule } from 'common/services/sendgrid.module';
+
 
 @Module({
   imports: [SendGridModule],

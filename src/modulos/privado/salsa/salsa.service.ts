@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Salsa } from 'src/models/salsa/salsa';
+import { Salsa } from 'models/salsa/salsa';
+
 import { DataSource, Repository } from 'typeorm';
 
 @Injectable()

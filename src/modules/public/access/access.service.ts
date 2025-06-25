@@ -1,9 +1,11 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { compareSync, hashSync } from 'bcryptjs';
-import { Acceso } from 'src/models/acceso/acceso';
+
 import { DataSource, Repository } from 'typeorm';
 import { ACCESO_SQL } from '../registro/register_sql';
-import GenerarToken from 'src/utilidades/generarToken';
+
+import { Acceso } from 'models/acceso/acceso';
+import GenerarToken from 'utilidades/generarToken';
 
 @Injectable()//incio de sesion
 export class AccessService {

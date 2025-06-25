@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { DetallePedido } from 'src/models/detalle-pedido/detalle-pedido';
+import { DetallePedido } from 'models/detalle-pedido/detalle-pedido';
+
 import { DataSource, Repository } from 'typeorm';
 
 @Injectable()

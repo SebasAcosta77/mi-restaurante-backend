@@ -12,10 +12,11 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { PedidoService } from './pedido.service';
-import { Pedido } from 'src/models/pedido/pedido';
-import { Roles } from 'src/common/decorators/roles.decorator';
-import { RolesGuardia } from 'src/common/guards/roles.guardia';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
+import { JwtGuard } from 'common/guards/jwt.guard';
+import { RolesGuardia } from 'common/guards/roles.guardia';
+import { Roles } from 'common/decorators/roles.decorator';
+import { Pedido } from 'models/pedido/pedido';
+
 
 @UseGuards(JwtGuard, RolesGuardia)
 @Controller('pedido')

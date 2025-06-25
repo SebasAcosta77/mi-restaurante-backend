@@ -1,7 +1,8 @@
 import { existsSync, readFileSync, unlinkSync } from 'fs';
 import rutasImagenes from '../../../utilidades/dominios/var_imagenes';
-import { Imagen } from 'src/models/imagen/imagen';
-import AdministrarImagenes from 'src/utilidades/funciones/administrarImagenes';
+import { Imagen } from 'models/imagen/imagen';
+import AdministrarImagenes from 'utilidades/funciones/administrarImagenes';
+
 
 class ImagenVerificar {
   public static consultarBase64(registros: Imagen[]): Imagen[] {

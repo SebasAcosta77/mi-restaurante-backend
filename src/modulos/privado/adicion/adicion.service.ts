@@ -1,6 +1,7 @@
 import { DataSource, Repository } from 'typeorm';
-import { Adicion } from './../../../models/adicion/adicion';
+
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { Adicion } from 'models/adicion/adicion';
 
 @Injectable()
 export class AdicionService {

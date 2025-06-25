@@ -1,5 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Usuario } from 'src/models/usuario/usuario';
+import { Usuario } from 'models/usuario/usuario';
+
 import { DataSource, Repository } from 'typeorm';
 
 @Injectable()

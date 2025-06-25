@@ -1,22 +1,22 @@
 
 import { Global, Module } from '@nestjs/common';
-import { Acceso } from 'src/models/acceso/acceso';
-import { Acompañamiento } from 'src/models/acompañamiento/acompañamiento';
-import { Rol } from 'src/models/rol/rol';
-import { Usuario } from 'src/models/usuario/usuario';
-
+import { Acceso } from 'models/acceso/acceso';
+import { Acompañamiento } from 'models/acompañamiento/acompañamiento';
+import { Adicion } from 'models/adicion/adicion';
+import { Bebida } from 'models/bebida/bebida';
+import { DetallePedido } from 'models/detalle-pedido/detalle-pedido';
+import { HamburguesaAdicion } from 'models/hamburguesa-adicion/hamburguesa-adicion';
+import { HamburguesaPersonalizada } from 'models/hamburguesa-personalizada/hamburguesa-personalizada';
+import { HamburguesaSalsa } from 'models/hamburguesa-salsa/hamburguesa-salsa';
+import { Hamburguesa } from 'models/hamburguesa/hamburguesa';
+import { Imagen } from 'models/imagen/imagen';
+import { Pedido } from 'models/pedido/pedido';
+import { Rol } from 'models/rol/rol';
+import { Salsa } from 'models/salsa/salsa';
+import { Usuario } from 'models/usuario/usuario';
 import { DataSource } from 'typeorm';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
-import { Imagen } from 'src/models/imagen/imagen';
-import { Adicion } from 'src/models/adicion/adicion';
-import { Bebida } from 'src/models/bebida/bebida';
-import { DetallePedido } from 'src/models/detalle-pedido/detalle-pedido';
-import { Hamburguesa } from 'src/models/hamburguesa/hamburguesa';
-import { HamburguesaAdicion } from 'src/models/hamburguesa-adicion/hamburguesa-adicion';
-import { HamburguesaPersonalizada } from 'src/models/hamburguesa-personalizada/hamburguesa-personalizada';
-import { HamburguesaSalsa } from 'src/models/hamburguesa-salsa/hamburguesa-salsa';
-import { Pedido } from 'src/models/pedido/pedido';
-import { Salsa } from 'src/models/salsa/salsa';
+
 
 
 @Global()

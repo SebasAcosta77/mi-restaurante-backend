@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { Acompañamiento } from 'src/models/acompañamiento/acompañamiento';
+import { Acompañamiento } from 'models/acompañamiento/acompañamiento';
+
 import { DataSource, Repository } from 'typeorm';
 
 @Injectable()

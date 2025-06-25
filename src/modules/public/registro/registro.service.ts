@@ -1,10 +1,11 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { hashSync } from 'bcryptjs';
-import { Acceso } from 'src/models/acceso/acceso';
-import { Usuario } from 'src/models/usuario/usuario';
-import GenerarToken from 'src/utilidades/generarToken';
+
 import { DataSource, Repository } from 'typeorm';
 import { ACCESO_SQL } from './register_sql';
+import { Acceso } from 'models/acceso/acceso';
+import { Usuario } from 'models/usuario/usuario';
+import GenerarToken from 'utilidades/generarToken';
 
 @Injectable()
 export class RegistroService {

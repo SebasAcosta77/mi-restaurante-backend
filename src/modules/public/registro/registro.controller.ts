@@ -1,7 +1,8 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { RegistroService } from './registro.service';
-import { Acceso } from 'src/models/acceso/acceso';
-import { Usuario } from 'src/models/usuario/usuario';
+import { Acceso } from 'models/acceso/acceso';
+import { Usuario } from 'models/usuario/usuario';
+
 
 @Controller('registro')
 export class RegistroController {

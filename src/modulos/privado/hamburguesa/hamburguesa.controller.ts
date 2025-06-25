@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, Put, UseGuards } from '@nestjs/common';
 import { HamburguesaService } from './hamburguesa.service';
-import { Hamburguesa } from 'src/models/hamburguesa/hamburguesa';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
-import { RolesGuardia } from 'src/common/guards/roles.guardia';
-import { Roles } from 'src/common/decorators/roles.decorator';
+import { JwtGuard } from 'common/guards/jwt.guard';
+import { RolesGuardia } from 'common/guards/roles.guardia';
+import { Roles } from 'common/decorators/roles.decorator';
+import { Hamburguesa } from 'models/hamburguesa/hamburguesa';
+
 
 @UseGuards(JwtGuard, RolesGuardia)
 @Controller('hamburguesa')

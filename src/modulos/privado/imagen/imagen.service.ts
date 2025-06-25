@@ -1,10 +1,11 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Imagen } from 'src/models/imagen/imagen';
+
 import { DataSource, Repository } from 'typeorm';
 import rutasImagen from '../../../utilidades/dominios/var_imagenes';
 import AdministrarImagen from '../../../utilidades/funciones/administrarImagenes';
 import ImagenVerificar from './imagenVerificar';
-import { SQL_IMAGEN } from './imagen_sql';
+import { SQL_IMAGEN } from './imagen_SQL';
+import { Imagen } from 'models/imagen/imagen';
 
 @Injectable()
 export class ImagenService {

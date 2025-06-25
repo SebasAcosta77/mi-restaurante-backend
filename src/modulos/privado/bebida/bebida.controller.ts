@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, Put, UseGuards } from '@nestjs/common';
 import { BebidaService } from './bebida.service';
-import { Bebida } from 'src/models/bebida/bebida';
-import { Roles } from 'src/common/decorators/roles.decorator';
-import { RolesGuardia } from 'src/common/guards/roles.guardia';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
+import { JwtGuard } from 'common/guards/jwt.guard';
+import { RolesGuardia } from 'common/guards/roles.guardia';
+import { Roles } from 'common/decorators/roles.decorator';
+import { Bebida } from 'models/bebida/bebida';
+
 
 
 @UseGuards(JwtGuard, RolesGuardia)

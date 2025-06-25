@@ -1,9 +1,10 @@
 import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, Put, UseGuards } from '@nestjs/common';
 import { DetallePedidoService } from './detalle-pedido.service';
-import { DetallePedido } from 'src/models/detalle-pedido/detalle-pedido';
-import { RolesGuardia } from 'src/common/guards/roles.guardia';
-import { JwtGuard } from 'src/common/guards/jwt.guard';
-import { Roles } from 'src/common/decorators/roles.decorator';
+import { JwtGuard } from 'common/guards/jwt.guard';
+import { RolesGuardia } from 'common/guards/roles.guardia';
+import { Roles } from 'common/decorators/roles.decorator';
+import { DetallePedido } from 'models/detalle-pedido/detalle-pedido';
+
 
 @UseGuards(JwtGuard, RolesGuardia)
 @Controller('detalle-pedido')

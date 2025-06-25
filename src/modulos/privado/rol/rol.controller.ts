@@ -1,7 +1,8 @@
 import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
 import { RolService } from './rol.service';
-import { Rol } from 'src/models/rol/rol';
+
 import { isEmpty } from 'rxjs';
+import { Rol } from 'models/rol/rol';
 
 @Controller('rol')
 export class RolController {

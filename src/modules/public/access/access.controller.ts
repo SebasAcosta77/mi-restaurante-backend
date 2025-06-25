@@ -1,6 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { AccessService } from './access.service';
-import { Acceso } from 'src/models/acceso/acceso';
+import { Acceso } from 'models/acceso/acceso';
+
 
 @Controller('access')
 export class AccessController {
