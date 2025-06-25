@@ -38,10 +38,13 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
                      synchronize:true, //sincronza la bd
                      logging:true,//muestra o oculta la bd
                      namingStrategy: new SnakeNamingStrategy(),
+                     ssl: {
+                         rejectUnauthorized: false, 
+                         },   
                      entities:[Acompañamiento, Acceso, Rol, Usuario, Imagen, Adicion, Bebida, DetallePedido, Hamburguesa, HamburguesaAdicion, HamburguesaPersonalizada, HamburguesaSalsa, Pedido, Salsa],
                     });
                     await poolConexion.initialize();
-                    console.log("conexion establecida con: "+ String(process.env.DATA_BASE));
+                    console.log("conexion establecida con: "+ String(process.env.DB_NAME));
                     return poolConexion;
                 }catch(miErrorsito){
                     console.log("fallo al realizar la conexion con la bd");
