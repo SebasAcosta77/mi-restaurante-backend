@@ -1,0 +1,102 @@
+#***************************
+# crear proyecto nest
+
+nest new back_siu
+
+#***************************
+# instalacion de paquetes
+
+npm i sharp
+npm i express
+npm i typeorm
+npm i @nestjs/config
+npm i @nestjs/typeorm
+npm i typeorm-naming-strategies
+npm i bcryptjs
+npm i formidable
+npm i jsonwebtoken
+
+
+npm i @types/express --save-dev
+npm i @types/bcryptjs --save-dev
+npm i @types/formidable --save-dev
+npm i @types/jsonwebtoken --save-dev
+
+#******************************
+Creacion de los modelos 
+#******************************
+nest g cl models/departamento
+nest g cl models/municipio
+nest g cl models/imagen --no-spec
+nest g cl models/detalleSitio --no-spec
+nest g cl models/detalleSitio --no-spec
+nest g cl models/Sitio --no-spec
+nest g cl models/usuario --no-spec
+#******************************
+creacion modulo departamento
+#***************************
+nest g mo modulos/privado/departamento
+nest g s modulos/privado/departamento --no-spec
+nest g co modulos/privado/departamento --no-spec
+
+nest g mo modulos/privado/municipio
+nest g s modulos/privado/municipio --no-spec
+nest g co modulos/privado/municipio --no-spec
+
+nest g mo modulos/privado/acceso
+nest g s modulos/privado/acceso--no-spec
+nest g co modulos/privado/acceso --no-spec
+
+nest g mo modulos/privado/detalle
+nest g s modulos/privado/detalle --no-spec
+nest g co modulos/privado/detalle --no-spec
+
+nest g mo modulos/privado/detalleSitio
+nest g s modulos/privado/detalleSitio --no-spec
+nest g co modulos/privado/detalleSitio --no-spec
+
+nest g mo modulos/privado/imagen
+nest g s modulos/privado/imagen --no-spec
+nest g co modulos/privado/imagen --no-spec
+
+nest g mo modulos/privado/sitio
+nest g s modulos/privado/sitio --no-spec
+nest g co modulos/privado/sitio --no-spec
+
+nest g mo modulos/privado/usuario
+nest g s modulos/privado/usuario --no-spec
+nest g co modulos/privado/usuario --no-spec
+
+
+#***************************
+#
+#***************************
+#nest g mo modules/public
+
+nest g mo modulos/public/registro
+register_sql.ts
+nest g s modulos/public/registro --no-spec
+nest g co modulos/public/registro --no-spec
+
+nest g mo modulos/public/registro/register_sql --no-spec
+
+nest g mo modulos/public/access
+nest g s modulos/public/access --no-spec
+nest g co modulos/public/access --no-spec
+#***************************
+#nest g mo modulos/privado
+#***************************
+nest g mo utilidades/generarTokens
+#*********************************
+nest g provider middlewar/seguridad
+#*************************************
+src utilidades/ generarTokens
+
+utilidades/funciones/administrarImagenes
+los join van en la tabla que tiene el espacio o la columna de la llave foranea 
+
+npm i deasync @types/deasync
+npm i deasync uuid 
+npm i --save-dev @types/uuid
+
+npm install @sendgrid/mail
