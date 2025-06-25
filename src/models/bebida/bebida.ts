@@ -9,7 +9,7 @@ export class Bebida {
   public nombreBebida: string;
   @Column({ type: 'varchar', length: 250, name: 'descripcion_bebida' })
   public descripcionBebida: string;
-  @Column({ type: 'double', name: 'precio_bebida' })
+  @Column({ type: 'double precision', name: 'precio_bebida' })
   public precioBebida: number;
 
   @OneToMany(() => Imagen, (objImagen: Imagen) => objImagen.bebidaI)
