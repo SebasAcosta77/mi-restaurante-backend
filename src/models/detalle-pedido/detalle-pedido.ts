@@ -19,7 +19,7 @@ export class DetallePedido {
   @Column({ type: 'varchar', length: 250, name: 'cantidad_detalle' })
   public cantidadDetalle: number;
 
-  @Column({ type: 'double', name: 'precio_unitario' })
+  @Column({ type: 'double precision', name: 'precio_unitario' })
   public precioDetalle: number;
 
   @Column({ type: 'integer', name: 'cod_pedido', nullable: false })
