@@ -17,7 +17,7 @@ export class HamburguesaPersonalizada {
   public codHaburguesaPerso: number;
   @Column({ type: 'double', name: 'precio_base', nullable: false })
   public precioBase: number;
-  @Column({ type: 'double', name: 'precio_final' })
+  @Column({ type: 'double precision', name: 'precio_final' })
   public precioHamburguesa: number;
   @Column({ type: 'integer', name: 'cod_pedido' })
   public codPedido: number;
