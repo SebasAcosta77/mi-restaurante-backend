@@ -5,29 +5,31 @@ import { join } from 'path';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  // Render asigna el puerto automáticamente mediante process.env.PORT
-  const port = Number(process.env.PORT) || 3000;
+  const port = Number(process.env.PORT_SERVER) || 3001;
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // Aumentar límite de tamaño para JSON y formularios
+  // Middleware manual para resolver CORS
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://dulcet-torte-8fb5c3.netlify.app');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    if (req.method === 'OPTIONS') {
+      return res.sendStatus(204);
+    }
+    next();
+  });
+
   app.use(json({ limit: '50mb' }));
   app.use(urlencoded({ extended: true }));
 
-  // Habilitar CORS (ajusta el origen si tu frontend está en Vercel)
- app.enableCors({
-  origin: 'https://dulcet-torte-8fb5c3.netlify.app', // dominio real del frontend
-  methods: 'GET,POST,PUT,DELETE',
-  credentials: true,
-});
-
-  // Servir imágenes estáticas desde src/doc/img
   app.useStaticAssets(join(__dirname, '..', 'src/doc/img'), {
     prefix: '/img',
   });
 
   await app.listen(port, () => {
-    console.log('🚀 Servidor funcionando en puerto: ' + port);
+    console.log('Servidor funcionando en puerto: ' + port);
   });
 }
 bootstrap();
