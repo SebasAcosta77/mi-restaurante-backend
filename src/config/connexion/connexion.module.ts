@@ -30,11 +30,11 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
                 try{
                     const poolConexion = new DataSource({
                      type:"mysql",
-                     host:String(process.env.HOST),
-                     port:Number(process.env.PORT),
-                     username:String(process.env.USER),
-                     password:String(process.env.PASSWORD),
-                     database:String(process.env.DATA_BASE),
+                     host:String(process.env.DB_PORT),
+                     port:Number(process.env.DB_PORT),
+                     username:String(process.env.DB_USERNAME),
+                     password:String(process.env.DB_PASSWORD),
+                     database:String(process.env.DB_NAME),
                      synchronize:true, //sincronza la bd
                      logging:true,//muestra o oculta la bd
                      namingStrategy: new SnakeNamingStrategy(),
