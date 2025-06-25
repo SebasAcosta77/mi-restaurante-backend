@@ -15,11 +15,11 @@ async function bootstrap() {
   app.use(urlencoded({ extended: true }));
 
   // Habilitar CORS (ajusta el origen si tu frontend está en Vercel)
-  app.enableCors({
-    origin: ['http://localhost:3000', 'https://tu-frontend.vercel.app'], // agrega aquí tu dominio Vercel si ya lo tienes
-    methods: 'GET,POST,PUT,DELETE',
-    credentials: true,
-  });
+ app.enableCors({
+  origin: 'https://dulcet-torte-8fb5c3.netlify.app', // dominio real del frontend
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true,
+});
 
   // Servir imágenes estáticas desde src/doc/img
   app.useStaticAssets(join(__dirname, '..', 'src/doc/img'), {
